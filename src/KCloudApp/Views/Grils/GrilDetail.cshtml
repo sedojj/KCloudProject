@@ -1,0 +1,4 @@
+﻿@model KenticoCloud.Delivery.ContentItem
+
+<img src="@Model.GetAssets("pic").First().Url" />
+@Html.Raw(Model.GetString("story"))

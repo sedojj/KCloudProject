@@ -1,0 +1,8 @@
+﻿@using KenticoCloud.Delivery
+@model IEnumerable<ContentItem>
+
+
+@foreach (var item in Model)
+{
+    <a href="~/Grils/GrilDetail/@item.System.Codename"><img src="@item.GetAssets("pic").FirstOrDefault().Url" /></a>
+}

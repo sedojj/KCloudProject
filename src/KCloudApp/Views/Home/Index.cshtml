@@ -1,0 +1,21 @@
+﻿@model KenticoCloud.Delivery.ContentItem
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section id="menupics">
+    <div class="wrap">
+        @foreach (var item in @Model.GetModularContent("intro_images"))
+        {
+            <div class="box">
+                <div class="boxInner">
+                    <a href="~/@item.GetModularContent("goto_link").First().GetString("gotourl")">
+                        <img src="@item.GetAssets("picture_in_the_navigation").First().Url" />
+                        <div class="titleBox">@item.GetString("description_text")</div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</section>
